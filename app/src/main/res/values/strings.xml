@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">IMDb</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="forgot_password">¿Olvidaste la contraseña?</string>
+    <string name="login">Login</string>
+    <string name="login_with">O puedes ingresar con</string>
+    <string name="no_account">¿No tienes cuenta?</string>
+    <string name="sign_up">Regístrate</string>
+    <string name="continue_as_guest">Continuar como invitado</string>
+    <string name="create_account">Crear una cuenta</string>
+    <string name="password_validation">La contraseña debe contener 8 caracteres</string>
+    <string name="name">Nombre</string>
+    <string name="email">Correo electrónico</string>
+    <string name="create">Crear</string>
+    <string name="finish_signup">Finalizar Registro</string>
+    <string name="connect_account">Conéctalo a cuenta de $s</string>
+    <string name="signup_google">Google</string>
+    <string name="signup_facebook">Facebook</string>
+    <string name="signup_apple">Apple</string>
+    <string name="cancel">Cancelar</string>
+    <string name="search">Buscar</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_search">Buscar</string>
+    <string name="nav_play">Play</string>
+    <string name="nav_profile">$s</string>
+</resources>

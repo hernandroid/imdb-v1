@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace namespaces.data
+    compileSdk defaultCompileSdkVersion
+
+    defaultConfig {
+        minSdk defaultMinSdkVersion
+        targetSdk defaultTargetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility javaCompileVersion
+        targetCompatibility javaCompileVersion
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation(project(path: ":domain"))
+
+    // AndroidX
+    implementation androidx.core
+    implementation coroutines.coroutinesAndroid
+    implementation persistence.datastore
+    implementation persistence.roomRuntime
+    implementation persistence.roomKtx
+    kapt persistence.roomCompiler
+
+    // Hilt
+    implementation di.hiltAndroid
+    kapt di.hiltCompiler
+
+    // Retrofit
+    implementation network.okHttp
+    implementation network.retrofit
+    implementation network.retrofitGson
+    implementation network.loggingInterceptor
+}
