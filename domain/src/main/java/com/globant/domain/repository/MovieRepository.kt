@@ -18,6 +18,10 @@ interface MovieRepository {
         region: String?
     ): Flow<Page<List<Movie>>>
 
+    fun getLatestMovies(
+        language: String?
+    ): Flow<Page<List<Movie>>>
+
     fun getMovieRecommendations(
         movieId: Int,
         language: String?,

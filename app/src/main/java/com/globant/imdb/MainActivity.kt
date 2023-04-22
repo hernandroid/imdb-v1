@@ -13,8 +13,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.globant.imdb.ui.splash.SplashScreen
 import com.globant.imdb.navigation.NavRoutes
+import com.globant.imdb.ui.main.home.HomeScreen
+import com.globant.imdb.ui.login.LoginScreen
+import com.globant.imdb.ui.main.MainScreen
+import com.globant.imdb.ui.splash.SplashScreen
 import com.globant.imdb.ui.theme.IMDbTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,6 +45,15 @@ fun App(navController: NavHostController) {
     NavHost(navController, startDestination = NavRoutes.Splash.route) {
         composable(route = NavRoutes.Splash.route) {
             SplashScreen(hiltViewModel(), navController)
+        }
+        composable(route = NavRoutes.Login.route) {
+            LoginScreen(hiltViewModel(), navController)
+        }
+        composable(route = NavRoutes.Main.route) {
+            MainScreen(navController)
+        }
+        composable(route = NavRoutes.Home.route) {
+            HomeScreen(hiltViewModel(), navController)
         }
     }
 }

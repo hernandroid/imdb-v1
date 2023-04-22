@@ -33,6 +33,13 @@ class MovieRepositoryImpl @Inject constructor(
             region
         )
 
+    override fun getLatestMovies(
+        language: String?
+    ): Flow<Page<List<Movie>>> =
+        remoteMovieDataSource.getLatestMovies(
+            language
+        )
+
     override fun getMovieRecommendations(
         movieId: Int,
         language: String?,

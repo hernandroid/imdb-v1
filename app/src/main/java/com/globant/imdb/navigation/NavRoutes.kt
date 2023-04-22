@@ -5,6 +5,7 @@ import androidx.navigation.NamedNavArgument
 private const val ROUTE_SPLASH = "splash"
 private const val ROUTE_LOGIN = "login"
 private const val ROUTE_SIGN_UP = "sign_up"
+private const val ROUTE_MAIN = "main"
 private const val ROUTE_HOME = "home"
 private const val ROUTE_SEARCH = "search"
 private const val ROUTE_DETAIL = "detail"
@@ -20,6 +21,8 @@ sealed class NavRoutes(
     object Login : NavRoutes(ROUTE_LOGIN)
 
     object SignUp : NavRoutes(ROUTE_SIGN_UP)
+
+    object Main : NavRoutes(ROUTE_MAIN)
 
     object Home : NavRoutes(ROUTE_HOME)
 

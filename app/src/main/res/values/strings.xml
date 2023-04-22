@@ -23,6 +23,6 @@
     <string name="search">Buscar</string>
     <string name="nav_home">Inicio</string>
     <string name="nav_search">Buscar</string>
-    <string name="nav_play">Play</string>
+    <string name="nav_watch">Ver</string>
     <string name="nav_profile">$s</string>
 </resources>

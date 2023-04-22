@@ -13,6 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import com.globant.imdb.R
+import com.globant.imdb.navigation.NavRoutes
 import com.globant.imdb.ui.theme.GoldenPoppy
 
 @Composable
@@ -20,11 +21,13 @@ fun SplashScreen(
     viewModel: SplashViewModel,
     navController: NavController
 ) {
-    Splash()
+    SplashContent()
+    viewModel.launchLogin()
+    navController.navigate(NavRoutes.Login.route)
 }
 
 @Composable
-fun Splash() {
+fun SplashContent() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -42,5 +45,5 @@ fun Splash() {
 @Preview(showBackground = true)
 @Composable
 fun SplashScreenPreview() {
-    Splash()
+    SplashContent()
 }

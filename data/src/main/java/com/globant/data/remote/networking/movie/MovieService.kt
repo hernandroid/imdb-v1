@@ -20,6 +20,11 @@ interface MovieService {
         @Query("region") region: String?
     ): MovieListApiModel
 
+    @GET("movie/latest")
+    suspend fun getLatestMovies(
+        @Query("language") language: String?
+    ): MovieListApiModel
+
     @GET("/movie/{movie_id}/recommendations")
     suspend fun getMovieRecommendations(
         @Path("movie_id") movieId: Int,

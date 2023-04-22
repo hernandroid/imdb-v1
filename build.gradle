@@ -12,8 +12,8 @@ buildscript {
                 data  : "${applicationId}.data"
         ]
         versions = [
-                androidGradlePlugin  : "7.4.2",
-                kotlin               : "1.7.0",
+                androidGradlePlugin  : '8.0.0',
+                kotlin               : "1.7.20",
                 hilt                 : "2.45",
                 coreKtx              : "1.10.0",
                 appCompat            : "1.6.1",

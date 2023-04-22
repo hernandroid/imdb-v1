@@ -1,7 +1,6 @@
 package com.globant.imdb.features.movie.converter
 
-import com.globant.domain.usecase.movie.GetTopRatedMoviesUseCase
-import com.globant.imdb.state.CommonResultConverter
+import com.globant.domain.usecase.movie.GetLatestMoviesUseCase
 import com.globant.imdb.features.movie.BelongsToCollection
 import com.globant.imdb.features.movie.Genre
 import com.globant.imdb.features.movie.MovieItemModel
@@ -9,12 +8,13 @@ import com.globant.imdb.features.movie.MovieListModel
 import com.globant.imdb.features.movie.ProductionCompany
 import com.globant.imdb.features.movie.ProductionCountry
 import com.globant.imdb.features.movie.SpokenLanguage
+import com.globant.imdb.state.CommonResultConverter
 import javax.inject.Inject
 
-class GetTopRatedMoviesConverter @Inject constructor(
-) : CommonResultConverter<GetTopRatedMoviesUseCase.Response, MovieListModel>() {
+class GetLatestMoviesConverter @Inject constructor(
+) : CommonResultConverter<GetLatestMoviesUseCase.Response, MovieListModel>() {
 
-    override fun convertSuccess(response: GetTopRatedMoviesUseCase.Response): MovieListModel {
+    override fun convertSuccess(response: GetLatestMoviesUseCase.Response): MovieListModel {
         return MovieListModel(
             page = response.data.page,
             results = response.data.results.map {

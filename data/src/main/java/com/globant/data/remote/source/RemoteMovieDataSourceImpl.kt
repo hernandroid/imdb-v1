@@ -53,6 +53,20 @@ class RemoteMovieDataSourceImpl @Inject constructor(
         throw UseCaseException.UnknownException(it)
     }
 
+    override fun getLatestMovies(
+        language: String?
+    ): Flow<Page<List<Movie>>> = flow {
+        emit(
+            movieService.getLatestMovies(
+                language
+            )
+        )
+    }.map { data ->
+        convertList(data)
+    }.catch {
+        throw UseCaseException.UnknownException(it)
+    }
+
     override fun getMovieRecommendations(
         movieId: Int,
         language: String?,
